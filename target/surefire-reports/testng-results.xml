@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-06-27T19:36:03 CEST" name="Surefire suite" finished-at="2021-06-27T19:36:47 CEST" duration-ms="43264">
+    <groups>
+    </groups>
+    <test started-at="2021-06-27T19:36:03 CEST" name="Surefire test" finished-at="2021-06-27T19:36:47 CEST" duration-ms="43264">
+      <class name="Tests.BasicAuthTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.BasicAuthTest@7e5d9a50]" started-at="2021-06-27T19:36:03 CEST" name="setUp" finished-at="2021-06-27T19:36:13 CEST" duration-ms="9265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="basicAuthentication()[pri:0, instance:Tests.BasicAuthTest@7e5d9a50]" started-at="2021-06-27T19:36:13 CEST" name="basicAuthentication" finished-at="2021-06-27T19:36:16 CEST" duration-ms="3495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicAuthentication -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.BasicAuthTest@7e5d9a50]" started-at="2021-06-27T19:36:16 CEST" name="tearDown" finished-at="2021-06-27T19:36:16 CEST" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Tests.BasicAuthTest -->
+      <class name="Tests.AddElementsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.AddElementsTest@60957c0f]" started-at="2021-06-27T19:36:16 CEST" name="setUp" description="Start WebDriver and Open The Internet Page" finished-at="2021-06-27T19:36:26 CEST" duration-ms="9750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="addElement()[pri:0, instance:Tests.AddElementsTest@60957c0f]" started-at="2021-06-27T19:36:26 CEST" name="addElement" finished-at="2021-06-27T19:36:26 CEST" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addElement -->
+        <test-method signature="addRemoveElement()[pri:0, instance:Tests.AddElementsTest@60957c0f]" started-at="2021-06-27T19:36:26 CEST" name="addRemoveElement" finished-at="2021-06-27T19:36:36 CEST" duration-ms="10139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addRemoveElement -->
+        <test-method signature="addSeveralElements()[pri:0, instance:Tests.AddElementsTest@60957c0f]" started-at="2021-06-27T19:36:36 CEST" name="addSeveralElements" finished-at="2021-06-27T19:36:46 CEST" duration-ms="10270" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addSeveralElements -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.AddElementsTest@60957c0f]" started-at="2021-06-27T19:36:46 CEST" name="tearDown" description="Quit WebDriver" finished-at="2021-06-27T19:36:47 CEST" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Tests.AddElementsTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

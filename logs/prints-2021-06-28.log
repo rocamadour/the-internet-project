@@ -1,0 +1,7 @@
+20:24:45.795 [main] INFO  Pages.CheckboxPage - Check First Checkbox
+20:24:45.808 [main] INFO  Pages.CheckboxPage - Uncheck First Checkbox
+20:24:45.849 [main] INFO  Pages.CheckboxPage - Verify the checkbox: 1 is checked
+20:24:45.864 [main] INFO  Tests.CheckboxTest - Uncheck Second Checkbox
+20:24:45.865 [main] INFO  Pages.CheckboxPage - Check Second Checkbox
+20:24:45.877 [main] INFO  Pages.CheckboxPage - Uncheck second checkbox
+20:24:45.924 [main] INFO  Pages.CheckboxPage - Verify the checkbox: 2 is checked

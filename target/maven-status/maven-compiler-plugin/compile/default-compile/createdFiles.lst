@@ -1,0 +1,12 @@
+SeleniumCore/DriverManagerFactory$1.class
+SeleniumCore/ChromeDriverManager.class
+SeleniumCore/AutomationException.class
+SeleniumCore/DriverType.class
+Pages/TheInternetPage.class
+Pages/TestPage.class
+SeleniumCore/EdgeDriverManager.class
+Pages/BasicAuthPage.class
+SeleniumCore/DriverManager.class
+SeleniumCore/DriverManagerFactory.class
+Pages/AddElementsPage.class
+SeleniumCore/FirefoxDriverManager.class
