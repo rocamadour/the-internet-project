@@ -1,7 +1,0 @@
-19:36:26.494 [main] INFO  Tests.AddElementsTest - Add Element Test Case
-19:36:26.499 [main] INFO  Pages.AddElementsPage - Add one Element
-19:36:26.585 [main] INFO  Tests.AddElementsTest - Add Element and Remove it Test Case
-19:36:26.585 [main] INFO  Pages.AddElementsPage - Add one Element
-19:36:26.631 [main] INFO  Pages.AddElementsPage - Delete all delete buttons
-19:36:36.726 [main] INFO  Tests.AddElementsTest - Add several elements Test Case
-19:36:36.729 [main] INFO  Pages.AddElementsPage - Add 5 Elements

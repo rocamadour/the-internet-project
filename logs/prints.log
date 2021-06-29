@@ -1,4 +1,0 @@
-20:28:07.954 [main] INFO  Pages.TheInternetPage - Open page: Add/Remove Elements
-20:28:09.967 [main] INFO  Pages.AddElementsPage - Add/Remove Elements Page OPEN
-20:28:10.034 [main] INFO  Tests.AddElementsTest - Add Element Test Case
-20:28:10.035 [main] INFO  Pages.AddElementsPage - Add one Element
