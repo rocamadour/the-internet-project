@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class TestPage {
 
@@ -25,5 +26,10 @@ public class TestPage {
 			logger.log(Level.INFO, "Element NOT present");
 			return false;
 		}
+	}
+
+	public void dragAndDrop(By source, By target) {
+		Actions dragDrop = new Actions(driver);
+		dragDrop.dragAndDrop(driver.findElement(source), driver.findElement(target)).build().perform();
 	}
 }

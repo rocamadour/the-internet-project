@@ -1,7 +1,6 @@
 package Tests;
 
 import org.apache.logging.log4j.*;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,25 +8,18 @@ import org.testng.annotations.Test;
 import Pages.AddElementsPage;
 import Pages.TheInternetPage;
 import SeleniumCore.AutomationException;
-import SeleniumCore.DriverManager;
-import SeleniumCore.DriverManagerFactory;
 import SeleniumCore.DriverType;
 import Types.InternetLinks;
 
-public class AddElementsTest {
+public class AddElementsTest extends BaseTest {
 
 	private static Logger logger = LogManager.getLogger(AddElementsTest.class.getName());
-	private DriverManager driverManager;
-	private WebDriver driver;
-	private TheInternetPage internet;
 	private AddElementsPage addElements;
 
 	@BeforeClass(description= "Start WebDriver and Open The Internet Page")
 	public void setUp() throws AutomationException {
-		driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-		driver = driverManager.getWebDriver();
-		internet = new TheInternetPage(driver);
-		addElements = internet.openPage(InternetLinks.ADDELEMENT);
+		getDriver(DriverType.CHROME);
+		addElements = new TheInternetPage(driver).openPage(InternetLinks.ADDELEMENT);
 	}
 
 	@Test
@@ -52,6 +44,6 @@ public class AddElementsTest {
 
 	@AfterClass(description= "Quit WebDriver")
 	public void tearDown() {
-		driverManager.quitWebDriver();
+		quitWebDriver();
 	}
 }

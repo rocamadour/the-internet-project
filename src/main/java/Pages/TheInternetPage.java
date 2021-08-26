@@ -25,11 +25,17 @@ public class TheInternetPage {
 		
 		switch(link) {
 		case ADDELEMENT:
-			driver.findElement(By.xpath(String.format(theLink, link.getLink()))).click();
+			openLink(link.getLink());
 			return (T) new AddElementsPage(driver);
 		case CHECKBOX:
-			driver.findElement(By.xpath(String.format(theLink, link.getLink()))).click();
+			openLink(link.getLink());
 			return (T) new CheckboxPage(driver);
+		case DRAGDROP:
+			openLink(link.getLink());
+			return (T) new DragAndDropPage(driver);
+		case BASICAUTH:
+			openLink(link.getLink());
+			return (T) new BasicAuthPage(driver);
 		default:
 			throw new AutomationException("Page is not valid");
 		}
@@ -39,5 +45,9 @@ public class TheInternetPage {
 	public BasicAuthPage openBasicAuth() {
 		logger.info("Get Basic Authentication Page");
 		return new BasicAuthPage(driver);
+	}
+	
+	private void openLink(String link) {
+		driver.findElement(By.xpath(String.format(theLink, link))).click();
 	}
 }

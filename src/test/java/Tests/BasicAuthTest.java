@@ -2,31 +2,25 @@ package Tests;
 
 import org.apache.logging.log4j.*;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import Pages.BasicAuthPage;
 import Pages.TheInternetPage;
-import SeleniumCore.DriverManager;
-import SeleniumCore.DriverManagerFactory;
+import SeleniumCore.AutomationException;
 import SeleniumCore.DriverType;
+import Types.InternetLinks;
 
-public class BasicAuthTest {
+public class BasicAuthTest extends BaseTest {
 
 	private static Logger logger = LogManager.getLogger(BasicAuthTest.class.getName());
-	private DriverManager driverManager;
-	private WebDriver driver;
-	private TheInternetPage internet;
 	private BasicAuthPage basicAuth;
 
 	@BeforeClass
-	public void setUp() {
-		driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-		driver = driverManager.getWebDriver();
-		internet = new TheInternetPage(driver);
-		basicAuth = internet.openBasicAuth();
+	public void setUp() throws AutomationException {
+		getDriver(DriverType.CHROME);
+		basicAuth = new TheInternetPage(driver).openPage(InternetLinks.BASICAUTH);
 	}
 
 	@Test
@@ -37,6 +31,6 @@ public class BasicAuthTest {
 
 	@AfterClass
 	public void tearDown() {
-		driverManager.quitWebDriver();
+		quitWebDriver();
 	}
 }

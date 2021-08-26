@@ -1,7 +1,6 @@
 package Tests;
 
 import org.apache.logging.log4j.*;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,25 +8,18 @@ import org.testng.annotations.Test;
 import Pages.CheckboxPage;
 import Pages.TheInternetPage;
 import SeleniumCore.AutomationException;
-import SeleniumCore.DriverManager;
-import SeleniumCore.DriverManagerFactory;
 import SeleniumCore.DriverType;
 import Types.InternetLinks;
 
-public class CheckboxTest {
+public class CheckboxTest extends BaseTest {
 
 	private static Logger logger = LogManager.getLogger(CheckboxTest.class.getName());
-	private DriverManager driverManager;
-	private WebDriver driver;
-	private TheInternetPage internet;
 	private CheckboxPage checkboxPage;
 
 	@BeforeClass(description = "Start WebDriver and Open The Internet Page")
 	public void setUp() throws AutomationException {
-		driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-		driver = driverManager.getWebDriver();
-		internet = new TheInternetPage(driver);
-		checkboxPage = internet.openPage(InternetLinks.CHECKBOX);
+		getDriver(DriverType.CHROME);
+		checkboxPage = new TheInternetPage(driver).openPage(InternetLinks.CHECKBOX);
 	}
 
 	@Test
@@ -58,6 +50,6 @@ public class CheckboxTest {
 
 	@AfterClass(description = "Quit WebDriver")
 	public void tearDown() {
-		driverManager.quitWebDriver();
+		quitWebDriver();
 	}
 }

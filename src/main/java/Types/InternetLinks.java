@@ -4,7 +4,8 @@ public enum InternetLinks {
 
 	ADDELEMENT("/add_remove_elements/", "Add/Remove Elements"),
 	BASICAUTH("/basic_auth", "Basic Authentication"),
-	CHECKBOX("/checkboxes", "Checkboxes");
+	CHECKBOX("/checkboxes", "Checkboxes"),
+	DRAGDROP("/drag_and_drop", "Drag and Drop");
 	
 	private String link;
 	private String name;
@@ -21,5 +22,4 @@ public enum InternetLinks {
 	public String getName() {
 		return this.name;
 	}
-	
 }
