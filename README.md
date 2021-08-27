@@ -4,7 +4,7 @@ This project aims to automate the web page: [The Internet](https://the-internet.
 
 The Framework implemented in this project includes:
 - Maven
-- TestyNG
+- TestNG
 - Log4j
 - Page Object Patter
 
