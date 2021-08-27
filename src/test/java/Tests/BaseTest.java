@@ -1,6 +1,7 @@
 package Tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 
 import SeleniumCore.DriverManager;
 import SeleniumCore.DriverManagerFactory;
@@ -15,8 +16,9 @@ public abstract class BaseTest {
 		driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
 		return driver = driverManager.getWebDriver();
 	}
-
-	public void quitWebDriver() {
+	
+	@AfterTest(description = "Quit WebDriver")
+	public void tearDown() {
 		driverManager.quitWebDriver();
 	}
 

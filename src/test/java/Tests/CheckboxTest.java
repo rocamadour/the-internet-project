@@ -1,7 +1,6 @@
 package Tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -48,8 +47,4 @@ public class CheckboxTest extends BaseTest {
 		checkboxPage.uncheckSecond();
 	}
 
-	@AfterClass(description = "Quit WebDriver")
-	public void tearDown() {
-		quitWebDriver();
-	}
 }

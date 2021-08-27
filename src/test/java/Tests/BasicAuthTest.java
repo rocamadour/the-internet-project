@@ -2,7 +2,6 @@ package Tests;
 
 import org.apache.logging.log4j.*;
 
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -29,8 +28,4 @@ public class BasicAuthTest extends BaseTest {
 		basicAuth.openBasicAuthPage("admin", "admin");
 	}
 
-	@AfterClass
-	public void tearDown() {
-		quitWebDriver();
-	}
 }

@@ -1,7 +1,6 @@
 package Tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -40,10 +39,5 @@ public class AddElementsTest extends BaseTest {
 		logger.info("Add several elements Test Case");
 		addElements.addElements(5);
 		addElements.deleteAllElements();
-	}
-
-	@AfterClass(description= "Quit WebDriver")
-	public void tearDown() {
-		quitWebDriver();
 	}
 }
