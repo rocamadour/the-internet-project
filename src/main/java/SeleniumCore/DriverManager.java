@@ -12,6 +12,8 @@ public abstract class DriverManager {
 
 	protected abstract void createWebDriver();
 
+	protected abstract void createRemoteWebDriver();
+
 	public void quitWebDriver() {
 		if (null != driver) {
 			logger.info("Close Browser");
@@ -28,4 +30,14 @@ public abstract class DriverManager {
 		}
 		return driver;
 	}
+
+	public WebDriver getRemoteWebDriver() {
+		if (null == driver) {
+			logger.info("Open Remote Browser");
+			createRemoteWebDriver();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
+		return driver;
+	}
+
 }

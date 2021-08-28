@@ -13,7 +13,7 @@ public class BasicAuthTest extends BaseTest {
 
 	private static Logger logger = LogManager.getLogger(BasicAuthTest.class.getName());
 	private BasicAuthPage basicAuth;
-
+	
 	@BeforeMethod
 	public void openPage() throws AutomationException {
 		basicAuth = new TheInternetPage(driver).openPage(InternetLinks.BASICAUTH);

@@ -13,19 +13,26 @@ public abstract class BaseTest {
 	protected static WebDriver driver;
 	protected DriverManager driverManager;
 
-	private WebDriver getDriver(DriverType browser) {
-		if(driver == null) {
-			driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-			driver = driverManager.getWebDriver();
+	public WebDriver getDriver(DriverType browser, String type) {
+		if (driver == null) {
+			driverManager = DriverManagerFactory.getDriverManager(browser);
+			switch (type) {
+			case "local":
+				driver = driverManager.getWebDriver();
+				break;
+			case "remote":
+				driver = driverManager.getRemoteWebDriver();
+				break;
+			}
 		}
 		return driver;
 	}
-	
+
 	@BeforeTest
 	public void setUp() {
-		getDriver(DriverType.CHROME);
+		getDriver(DriverType.CHROME, "remote");
 	}
-	
+
 	@AfterTest(description = "Quit WebDriver")
 	public void tearDown() {
 		driverManager.quitWebDriver();

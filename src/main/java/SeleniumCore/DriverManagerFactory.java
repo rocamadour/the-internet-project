@@ -1,6 +1,10 @@
 package SeleniumCore;
 
 public class DriverManagerFactory {
+	
+	private DriverManagerFactory() {
+		throw new IllegalStateException("Utility class");
+	}
 
 	public static DriverManager getDriverManager(DriverType type) {
 		DriverManager driverManager;
@@ -18,4 +22,5 @@ public class DriverManagerFactory {
 
 		return driverManager;
 	}
+	 
 }
