@@ -1,13 +1,12 @@
 package Tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Pages.AddElementsPage;
 import Pages.TheInternetPage;
 import SeleniumCore.AutomationException;
-import SeleniumCore.DriverType;
 import Types.InternetLinks;
 
 public class AddElementsTest extends BaseTest {
@@ -15,9 +14,8 @@ public class AddElementsTest extends BaseTest {
 	private static Logger logger = LogManager.getLogger(AddElementsTest.class.getName());
 	private AddElementsPage addElements;
 
-	@BeforeClass(description= "Start WebDriver and Open The Internet Page")
-	public void setUp() throws AutomationException {
-		getDriver(DriverType.CHROME);
+	@BeforeMethod(description= "Start WebDriver and Open The Internet Page")
+	public void openPage() throws AutomationException {
 		addElements = new TheInternetPage(driver).openPage(InternetLinks.ADDELEMENT);
 	}
 
@@ -40,4 +38,5 @@ public class AddElementsTest extends BaseTest {
 		addElements.addElements(5);
 		addElements.deleteAllElements();
 	}
+	
 }

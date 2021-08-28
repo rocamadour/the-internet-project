@@ -41,11 +41,6 @@ public class TheInternetPage {
 		}
 		
 	}
-
-	public BasicAuthPage openBasicAuth() {
-		logger.info("Get Basic Authentication Page");
-		return new BasicAuthPage(driver);
-	}
 	
 	private void openLink(String link) {
 		driver.findElement(By.xpath(String.format(theLink, link))).click();

@@ -2,6 +2,7 @@ package Tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import SeleniumCore.DriverManager;
 import SeleniumCore.DriverManagerFactory;
@@ -9,12 +10,20 @@ import SeleniumCore.DriverType;
 
 public abstract class BaseTest {
 
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected DriverManager driverManager;
 
-	public WebDriver getDriver(DriverType browser) {
-		driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-		return driver = driverManager.getWebDriver();
+	private WebDriver getDriver(DriverType browser) {
+		if(driver == null) {
+			driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
+			driver = driverManager.getWebDriver();
+		}
+		return driver;
+	}
+	
+	@BeforeTest
+	public void setUp() {
+		getDriver(DriverType.CHROME);
 	}
 	
 	@AfterTest(description = "Quit WebDriver")

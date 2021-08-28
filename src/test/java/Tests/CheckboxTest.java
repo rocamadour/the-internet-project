@@ -1,13 +1,12 @@
 package Tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Pages.CheckboxPage;
 import Pages.TheInternetPage;
 import SeleniumCore.AutomationException;
-import SeleniumCore.DriverType;
 import Types.InternetLinks;
 
 public class CheckboxTest extends BaseTest {
@@ -15,9 +14,8 @@ public class CheckboxTest extends BaseTest {
 	private static Logger logger = LogManager.getLogger(CheckboxTest.class.getName());
 	private CheckboxPage checkboxPage;
 
-	@BeforeClass(description = "Start WebDriver and Open The Internet Page")
-	public void setUp() throws AutomationException {
-		getDriver(DriverType.CHROME);
+	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
+	public void openPage() throws AutomationException {
 		checkboxPage = new TheInternetPage(driver).openPage(InternetLinks.CHECKBOX);
 	}
 

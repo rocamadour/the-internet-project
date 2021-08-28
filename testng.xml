@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-	<test thread-count="5" name="Test">
+<suite name="Testing The Internet App Suite">
+	<test name="Regression-1">
 		<classes>
-			<class name="maven_project.test_1.RESTAPITest">
-				<methods>
-					<exclude name='deleteTwitter' />
-				</methods>
-			</class>
-			<class name="maven_project.test_1.SeleniumTest" />
-			<class name="maven_project.test_1.AppiumTest" />
+			<class name="Tests.AddElementsTest" />
+			<class name="Tests.BasicAuthTest" />
+			<class name="Tests.CheckboxTest" />
+			<class name="Tests.DragAndDropTest" />
 		</classes>
-	</test> <!-- Test -->
+	</test>
 </suite> <!-- Suite -->

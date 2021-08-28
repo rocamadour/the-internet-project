@@ -8,13 +8,11 @@ import org.testng.Assert;
 
 public class DragAndDropPage extends TestPage {
 
-	private WebDriver driver;
 	private static Logger logger = LogManager.getLogger(DragAndDropPage.class.getName());
 
 	public DragAndDropPage(WebDriver driver) {
 		super(driver);
 		logger.info("Drag and Drop Page OPEN");
-		this.driver = driver;
 		Assert.assertTrue((driver.findElement(By.xpath("//h3")).getText().contains("Drag and Drop")));
 	}
 
