@@ -30,7 +30,7 @@ public abstract class BaseTest {
 
 	@BeforeSuite
 	public void setUp() {
-		getDriver(DriverType.CHROME, "local");
+		getDriver(DriverType.CHROME, "remote");
 	}
 
 	@AfterTest(description = "Quit WebDriver")
