@@ -6,7 +6,8 @@
 			<class name="Tests.AddElementsTest" />
 			<class name="Tests.BasicAuthTest" />
 			<class name="Tests.CheckboxTest" />
-			<class name="Tests.DragAndDropTest" />
+			<class name="Tests.DropdownTest" />
+			<class name="Tests.ContextMenuTest" />
 		</classes>
 	</test>
-</suite> <!-- Suite -->
+</suite>

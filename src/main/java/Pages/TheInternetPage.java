@@ -1,20 +1,20 @@
-package Pages;
+package pages;
 
 import org.apache.logging.log4j.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import SeleniumCore.AutomationException;
-import Types.InternetLinks;
+import seleniumCore.AutomationException;
+import types.InternetLinks;
 
-public class TheInternetPage {
+public class TheInternetPage extends TestPage {
 
 	private Logger logger = LogManager.getLogger(TheInternetPage.class.getName());
-	private WebDriver driver;
 
 	private String theLink = "//li/a[@href = '%s']";
 
 	public TheInternetPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		driver.get("https://the-internet.herokuapp.com/");
 	}
@@ -30,12 +30,15 @@ public class TheInternetPage {
 		case CHECKBOX:
 			openLink(link.getLink());
 			return (T) new CheckboxPage(driver);
-		case DRAGDROP:
-			openLink(link.getLink());
-			return (T) new DragAndDropPage(driver);
 		case BASICAUTH:
 			openLink(link.getLink());
 			return (T) new BasicAuthPage(driver);
+		case DROPDOWN:
+			openLink(link.getLink());
+			return (T) new DropdownPage(driver);
+		case CONTEXTMENU:
+			openLink(link.getLink());
+			return (T) new ContextMenuPage(driver);
 		default:
 			throw new AutomationException("Page is not valid");
 		}
@@ -43,6 +46,6 @@ public class TheInternetPage {
 	}
 	
 	private void openLink(String link) {
-		driver.findElement(By.xpath(String.format(theLink, link))).click();
+		getElement(By.xpath(String.format(theLink, link))).click();
 	}
 }

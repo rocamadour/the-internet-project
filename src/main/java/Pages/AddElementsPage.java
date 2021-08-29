@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import java.util.List;
 import org.apache.logging.log4j.*;
@@ -8,11 +8,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import SeleniumCore.AutomationException;
+import seleniumCore.AutomationException;
 
 public class AddElementsPage extends TestPage {
 
-	private WebDriver driver;
 	private static Logger logger = LogManager.getLogger(AddElementsPage.class.getName());
 
 	private By button = By.xpath("//button[@onclick = 'addElement()']");
@@ -23,13 +22,13 @@ public class AddElementsPage extends TestPage {
 
 		logger.info("Add/Remove Elements Page OPEN");
 		this.driver = driver;
-		Assert.assertTrue((driver.findElement(By.xpath("//h3")).getText().contains("Elements")));
+		Assert.assertTrue((getElement(By.xpath("//h3")).getText().contains("Elements")));
 	}
 
 	public void addElement() {
 		logger.info("Add one Element");
-		driver.findElement(button).click();
-		Assert.assertTrue(driver.findElement(deleteButton).isDisplayed());
+		getElement(button).click();
+		Assert.assertTrue(getElement(deleteButton).isDisplayed());
 	}
 
 	public void addElements(int times) throws AutomationException {
@@ -39,14 +38,14 @@ public class AddElementsPage extends TestPage {
 			throw new AutomationException("Number of Elements should be higher than 0");
 		}
 		for (int i = 1; i <= times; i++) {
-			driver.findElement(button).click();
+			getElement(button).click();
 		}
 
 	}
 
 	public void deleteAllElements() {
 		logger.info("Delete all delete buttons");
-		List<WebElement> deletes = driver.findElements(By.xpath("//div[@id = 'elements']/button[text() = 'Delete']"));
+		List<WebElement> deletes = getElements(By.xpath("//div[@id = 'elements']/button[text() = 'Delete']"));
 		for (WebElement delete : deletes) {
 			delete.click();
 		}

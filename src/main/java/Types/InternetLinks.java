@@ -1,11 +1,12 @@
-package Types;
+package types;
 
 public enum InternetLinks {
 
 	ADDELEMENT("/add_remove_elements/", "Add/Remove Elements"),
 	BASICAUTH("/basic_auth", "Basic Authentication"),
-	CHECKBOX("/checkboxes", "Checkboxes"),
-	DRAGDROP("/drag_and_drop", "Drag and Drop");
+	CHECKBOX("/checkboxes", "Checkboxes"), 
+	DROPDOWN("/dropdown", "Dropdown"),
+	CONTEXTMENU("/context_menu", "Context Menu");
 	
 	private String link;
 	private String name;

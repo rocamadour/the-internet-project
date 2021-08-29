@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.apache.logging.log4j.*;
 import org.openqa.selenium.By;
@@ -7,14 +7,13 @@ import org.testng.Assert;
 
 public class CheckboxPage extends TestPage {
 
-	private WebDriver driver;
 	private Logger logger = LogManager.getLogger(CheckboxPage.class.getName());
 
 	public CheckboxPage(WebDriver driver) {
 		super(driver);
 		logger.info("Checkboxes Page OPEN");
 		this.driver = driver;
-		Assert.assertTrue((driver.findElement(By.xpath("//h3")).getText().contains("Checkboxes")));
+		Assert.assertTrue((getElement(By.xpath("//h3")).getText().contains("Checkboxes")));
 	}
 
 	private By checkboxOne = By.xpath("//input[1]");
@@ -22,32 +21,32 @@ public class CheckboxPage extends TestPage {
 
 	public void checkFirst() {
 		logger.info("Check First Checkbox");
-		if (!driver.findElement(checkboxOne).isSelected()) {
-			driver.findElement(checkboxOne).click();
+		if (!getElement(checkboxOne).isSelected()) {
+			getElement(checkboxOne).click();
 			validateCheckbox(1, true);
 		}
 	}
 
 	public void checkSecond() {
 		logger.info("Check Second Checkbox");
-		if (!driver.findElement(checkboxTwo).isSelected()) {
-			driver.findElement(checkboxTwo).click();
+		if (!getElement(checkboxTwo).isSelected()) {
+			getElement(checkboxTwo).click();
 			validateCheckbox(2, true);
 		}
 	}
 
 	public void uncheckFirst() {
 		logger.info("Uncheck First Checkbox");
-		if (driver.findElement(checkboxOne).isSelected()) {
-			driver.findElement(checkboxOne).click();
+		if (getElement(checkboxOne).isSelected()) {
+			getElement(checkboxOne).click();
 			validateCheckbox(1, false);
 		}
 	}
 
 	public void uncheckSecond() {
 		logger.info("Uncheck second checkbox");
-		if (driver.findElement(checkboxTwo).isSelected()) {
-			driver.findElement(checkboxTwo).click();
+		if (getElement(checkboxTwo).isSelected()) {
+			getElement(checkboxTwo).click();
 			validateCheckbox(2, false);
 		}
 	}
@@ -55,13 +54,13 @@ public class CheckboxPage extends TestPage {
 	private void validateCheckbox(int number, boolean isChecked) {
 		logger.info("Verify the checkbox: {} is checked", number);
 		if (number == 1 && isChecked)
-			Assert.assertTrue(driver.findElement(checkboxOne).isSelected());
+			Assert.assertTrue(getElement(checkboxOne).isSelected());
 		else if (number == 1 && !isChecked)
-			Assert.assertFalse(driver.findElement(checkboxOne).isSelected());
+			Assert.assertFalse(getElement(checkboxOne).isSelected());
 		else if (number == 2 && isChecked)
-			Assert.assertTrue(driver.findElement(checkboxTwo).isSelected());
+			Assert.assertTrue(getElement(checkboxTwo).isSelected());
 		else if (number == 2 && !isChecked)
-			Assert.assertFalse(driver.findElement(checkboxTwo).isSelected());
+			Assert.assertFalse(getElement(checkboxTwo).isSelected());
 	}
 
 }

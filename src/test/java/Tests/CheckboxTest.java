@@ -1,20 +1,20 @@
-package Tests;
+package tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import Pages.CheckboxPage;
-import Pages.TheInternetPage;
-import SeleniumCore.AutomationException;
-import Types.InternetLinks;
+import pages.CheckboxPage;
+import pages.TheInternetPage;
+import seleniumCore.AutomationException;
+import types.InternetLinks;
 
 public class CheckboxTest extends BaseTest {
 
 	private static Logger logger = LogManager.getLogger(CheckboxTest.class.getName());
 	private CheckboxPage checkboxPage;
 
-	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
+	@BeforeTest(description = "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
 		checkboxPage = new TheInternetPage(driver).openPage(InternetLinks.CHECKBOX);
 	}

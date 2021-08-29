@@ -1,20 +1,20 @@
-package Tests;
+package tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import Pages.BasicAuthPage;
-import Pages.TheInternetPage;
-import SeleniumCore.AutomationException;
-import Types.InternetLinks;
+import pages.BasicAuthPage;
+import pages.TheInternetPage;
+import seleniumCore.AutomationException;
+import types.InternetLinks;
 
 public class BasicAuthTest extends BaseTest {
 
 	private static Logger logger = LogManager.getLogger(BasicAuthTest.class.getName());
 	private BasicAuthPage basicAuth;
 	
-	@BeforeMethod
+	@BeforeTest
 	public void openPage() throws AutomationException {
 		basicAuth = new TheInternetPage(driver).openPage(InternetLinks.BASICAUTH);
 	}

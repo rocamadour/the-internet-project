@@ -1,12 +1,12 @@
-package Tests;
+package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 
-import SeleniumCore.DriverManager;
-import SeleniumCore.DriverManagerFactory;
-import SeleniumCore.DriverType;
+import seleniumCore.DriverManager;
+import seleniumCore.DriverManagerFactory;
+import seleniumCore.DriverType;
 
 public abstract class BaseTest {
 
@@ -28,9 +28,9 @@ public abstract class BaseTest {
 		return driver;
 	}
 
-	@BeforeTest
+	@BeforeSuite
 	public void setUp() {
-		getDriver(DriverType.CHROME, "remote");
+		getDriver(DriverType.CHROME, "local");
 	}
 
 	@AfterTest(description = "Quit WebDriver")

@@ -6,7 +6,12 @@ The Framework implemented in this project includes:
 - Maven
 - TestNG
 - Log4j
-- Page Object Patter
+- ReporterNG & Allure
+- Jenkins + Docker
 
+and the design patterns implemented are:
+
+- Page Object Patter
+- Factory Design Pattern
 
 This file will be updated once I continue adding more features to it.

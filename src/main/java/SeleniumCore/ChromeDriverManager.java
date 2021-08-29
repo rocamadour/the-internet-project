@@ -1,4 +1,4 @@
-package SeleniumCore;
+package seleniumCore;
 
 import java.net.MalformedURLException;
 import java.net.URL;
