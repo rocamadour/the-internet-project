@@ -2,7 +2,7 @@ package tests;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pages.DropdownPage;
@@ -15,7 +15,7 @@ public class DropdownTest extends BaseTest {
 	private static Logger logger = LogManager.getLogger(DropdownTest.class.getName());
 	private DropdownPage dropdown;
 	
-	@BeforeTest(description = "Start WebDriver and Open The Internet Page")
+	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
 		dropdown = new TheInternetPage(driver).openPage(InternetLinks.DROPDOWN);
 	}

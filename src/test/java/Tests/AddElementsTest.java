@@ -1,7 +1,7 @@
 package tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pages.AddElementsPage;
@@ -14,7 +14,7 @@ public class AddElementsTest extends BaseTest {
 	private static Logger logger = LogManager.getLogger(AddElementsTest.class.getName());
 	private AddElementsPage addElements;
 
-	@BeforeTest(description= "Start WebDriver and Open The Internet Page")
+	@BeforeMethod(description= "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
 		addElements = new TheInternetPage(driver).openPage(InternetLinks.ADDELEMENT);
 	}
