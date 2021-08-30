@@ -1,2 +1,6 @@
-Tests/BasicAuthTest.class
-Tests/AddElementsTest.class
+tests/AddElementsTest.class
+tests/ContextMenuTest.class
+tests/DropdownTest.class
+tests/BasicAuthTest.class
+tests/BaseTest.class
+tests/CheckboxTest.class
