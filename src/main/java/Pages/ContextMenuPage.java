@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class ContextMenuPage extends TestPage {
+public class ContextMenuPage extends TheInternetPage {
 
 	private Logger logger = LogManager.getLogger(ContextMenuPage.class.getName());
 	private By rectangle = By.xpath("//div[@id='hot-spot']");
@@ -14,8 +14,7 @@ public class ContextMenuPage extends TestPage {
 	public ContextMenuPage(WebDriver driver) {
 		super(driver);
 		logger.info("Context Menu Page OPEN");
-		this.driver = driver;
-		Assert.assertTrue((getElement(By.xpath("//h3")).getText().contains("Context Menu")));
+		Assert.assertTrue((getElement(title).getText().contains("Context Menu")));
 	}
 	
 	public void openContextMenu() {

@@ -19,6 +19,8 @@ public class TestPage {
 	public TestPage(WebDriver driver) {
 		this.driver = driver;
 	}
+	
+	protected By title = By.xpath("//h3");
 
 	public WebElement getElement(By selector) {
 		return driver.findElement(selector);

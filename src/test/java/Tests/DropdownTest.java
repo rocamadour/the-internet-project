@@ -17,7 +17,7 @@ public class DropdownTest extends BaseTest {
 	
 	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
-		dropdown = new TheInternetPage(driver).openPage(InternetLinks.DROPDOWN);
+		dropdown = (DropdownPage) new TheInternetPage(driver).openPage(InternetLinks.DROPDOWN);
 	}
 	
 	@Test

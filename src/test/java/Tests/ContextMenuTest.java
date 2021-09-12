@@ -17,7 +17,7 @@ public class ContextMenuTest extends BaseTest {
 	
 	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
-		contextMenu = new TheInternetPage(driver).openPage(InternetLinks.CONTEXTMENU);
+		contextMenu = (ContextMenuPage) new TheInternetPage(driver).openPage(InternetLinks.CONTEXTMENU);
 	}
 	
 	@Test

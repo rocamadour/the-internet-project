@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class DropdownPage extends TestPage {
+public class DropdownPage extends TheInternetPage {
 
 	private Logger logger = LogManager.getLogger(DropdownPage.class.getName());
 	private By dropdown = By.xpath("//select[@id='dropdown']");
@@ -15,8 +15,7 @@ public class DropdownPage extends TestPage {
 	public DropdownPage(WebDriver driver) {
 		super(driver);
 		logger.info("Dropdown Page OPEN");
-		this.driver = driver;
-		Assert.assertTrue((getElement(By.xpath("//h3")).getText().contains("Dropdown List")));
+		Assert.assertTrue((getElement(title).getText().contains("Dropdown List")));
 	}
 
 	public void selectDropdown(String value) {

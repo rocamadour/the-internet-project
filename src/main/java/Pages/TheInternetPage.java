@@ -12,33 +12,33 @@ public class TheInternetPage extends TestPage {
 	private Logger logger = LogManager.getLogger(TheInternetPage.class.getName());
 
 	private String theLink = "//li/a[@href = '%s']";
+	private static final String URL = "https://the-internet.herokuapp.com/";
 
 	public TheInternetPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-		driver.get("https://the-internet.herokuapp.com/");
+		driver.get(URL);
 	}
 	
-	@SuppressWarnings("unchecked")
-	public <T> T openPage(InternetLinks link) throws AutomationException {
+	public TestPage openPage(InternetLinks link) throws AutomationException {
 		logger.info("Open page: {}", link.getName());
 		
 		switch(link) {
 		case ADDELEMENT:
 			openLink(link.getLink());
-			return (T) new AddElementsPage(driver);
+			return new AddElementsPage(driver);
 		case CHECKBOX:
 			openLink(link.getLink());
-			return (T) new CheckboxPage(driver);
+			return new CheckboxPage(driver);
 		case BASICAUTH:
 			openLink(link.getLink());
-			return (T) new BasicAuthPage(driver);
+			return new BasicAuthPage(driver);
 		case DROPDOWN:
 			openLink(link.getLink());
-			return (T) new DropdownPage(driver);
+			return new DropdownPage(driver);
 		case CONTEXTMENU:
 			openLink(link.getLink());
-			return (T) new ContextMenuPage(driver);
+			return new ContextMenuPage(driver);
 		default:
 			throw new AutomationException("Page is not valid");
 		}

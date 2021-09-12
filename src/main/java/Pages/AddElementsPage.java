@@ -10,19 +10,19 @@ import org.testng.Assert;
 
 import seleniumCore.AutomationException;
 
-public class AddElementsPage extends TestPage {
+public class AddElementsPage extends TheInternetPage {
 
 	private static Logger logger = LogManager.getLogger(AddElementsPage.class.getName());
 
 	private By button = By.xpath("//button[@onclick = 'addElement()']");
 	private By deleteButton = By.xpath("//div[@id = 'elements']/button[text() = 'Delete']");
+	private By deleteButtons = By.xpath("//div[@id = 'elements']/button[text() = 'Delete']");
 
 	public AddElementsPage(WebDriver driver) {
 		super(driver);
 
 		logger.info("Add/Remove Elements Page OPEN");
-		this.driver = driver;
-		Assert.assertTrue((getElement(By.xpath("//h3")).getText().contains("Elements")));
+		Assert.assertTrue((getElement(title).getText().contains("Elements")));
 	}
 
 	public void addElement() {
@@ -45,7 +45,7 @@ public class AddElementsPage extends TestPage {
 
 	public void deleteAllElements() {
 		logger.info("Delete all delete buttons");
-		List<WebElement> deletes = getElements(By.xpath("//div[@id = 'elements']/button[text() = 'Delete']"));
+		List<WebElement> deletes = getElements(deleteButtons);
 		for (WebElement delete : deletes) {
 			delete.click();
 		}

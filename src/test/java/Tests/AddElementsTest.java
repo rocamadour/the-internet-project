@@ -16,7 +16,7 @@ public class AddElementsTest extends BaseTest {
 
 	@BeforeMethod(description= "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
-		addElements = new TheInternetPage(driver).openPage(InternetLinks.ADDELEMENT);
+		addElements = (AddElementsPage) new TheInternetPage(driver).openPage(InternetLinks.ADDELEMENT);
 	}
 
 	@Test

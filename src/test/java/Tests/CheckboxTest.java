@@ -16,7 +16,7 @@ public class CheckboxTest extends BaseTest {
 
 	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
-		checkboxPage = new TheInternetPage(driver).openPage(InternetLinks.CHECKBOX);
+		checkboxPage = (CheckboxPage) new TheInternetPage(driver).openPage(InternetLinks.CHECKBOX);
 	}
 
 	@Test

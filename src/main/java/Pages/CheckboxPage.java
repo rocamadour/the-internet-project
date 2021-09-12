@@ -5,15 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class CheckboxPage extends TestPage {
+public class CheckboxPage extends TheInternetPage {
 
 	private Logger logger = LogManager.getLogger(CheckboxPage.class.getName());
 
 	public CheckboxPage(WebDriver driver) {
 		super(driver);
 		logger.info("Checkboxes Page OPEN");
-		this.driver = driver;
-		Assert.assertTrue((getElement(By.xpath("//h3")).getText().contains("Checkboxes")));
+		Assert.assertTrue((getElement(title).getText().contains("Checkboxes")));
 	}
 
 	private By checkboxOne = By.xpath("//input[1]");

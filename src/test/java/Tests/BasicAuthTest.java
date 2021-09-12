@@ -16,7 +16,7 @@ public class BasicAuthTest extends BaseTest {
 	
 	@BeforeMethod
 	public void openPage() throws AutomationException {
-		basicAuth = new TheInternetPage(driver).openPage(InternetLinks.BASICAUTH);
+		basicAuth = (BasicAuthPage) new TheInternetPage(driver).openPage(InternetLinks.BASICAUTH);
 	}
 
 	@Test
