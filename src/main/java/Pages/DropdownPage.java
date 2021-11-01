@@ -10,7 +10,7 @@ public class DropdownPage extends TheInternetPage {
 
 	private Logger logger = LogManager.getLogger(DropdownPage.class.getName());
 	private By dropdown = By.xpath("//select[@id='dropdown']");
-	String dropdownOptions = "//select[@id='dropdown']/option[@value='%s' and @selected='selected']";
+	private String dropdownOptions = "//select[@id='dropdown']/option[@value='%s' and @selected='selected']";
 	
 	public DropdownPage(WebDriver driver) {
 		super(driver);

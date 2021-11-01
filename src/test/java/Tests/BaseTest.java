@@ -1,6 +1,10 @@
 package tests;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
@@ -30,12 +34,18 @@ public abstract class BaseTest {
 
 	@BeforeSuite
 	public void setUp() {
-		getDriver(DriverType.CHROME, "remote");
+		getDriver(DriverType.CHROME, "local");
 	}
 
 	@AfterTest(description = "Quit WebDriver")
 	public void tearDown() {
 		driverManager.quitWebDriver();
+	}
+	
+	@AfterMethod
+	public void takeScreenshotOnFailure(ITestResult testResult) throws IOException {
+		if(testResult.getStatus() == ITestResult.FAILURE)
+			driverManager.takeScreenShot(testResult.getName());
 	}
 
 }

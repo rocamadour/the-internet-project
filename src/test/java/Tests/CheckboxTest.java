@@ -1,7 +1,7 @@
 package tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pages.CheckboxPage;
@@ -14,7 +14,7 @@ public class CheckboxTest extends BaseTest {
 	private static Logger logger = LogManager.getLogger(CheckboxTest.class.getName());
 	private CheckboxPage checkboxPage;
 
-	@BeforeMethod(description = "Start WebDriver and Open The Internet Page")
+	@BeforeTest(description = "Start WebDriver and Open The Internet Page")
 	public void openPage() throws AutomationException {
 		checkboxPage = (CheckboxPage) new TheInternetPage(driver).openPage(InternetLinks.CHECKBOX);
 	}

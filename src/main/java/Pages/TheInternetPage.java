@@ -17,7 +17,8 @@ public class TheInternetPage extends TestPage {
 	public TheInternetPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-		driver.get(URL);
+		if (!driver.getCurrentUrl().contains(URL))
+			driver.get(URL);
 	}
 	
 	public TestPage openPage(InternetLinks link) throws AutomationException {
