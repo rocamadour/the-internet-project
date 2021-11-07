@@ -70,10 +70,8 @@ public abstract class BaseTest {
 
 	private String getEnvironmentProperty() {
 		String environment = System.getProperty("env");
-		if (environment == null || environment.equalsIgnoreCase("local"))
+		if (environment == null)
 			environment = "local";
-		else
-			environment = "remote";
 		return environment;
 	}
 

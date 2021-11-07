@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.853 s - in TestSuite
+Tests run: 27, Failures: 1, Errors: 0, Skipped: 26, Time elapsed: 17.542 s <<< FAILURE! - in TestSuite
+openPage(tests.BasicAuthTest)  Time elapsed: 17.156 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//li/a[@href = '/basic_auth']"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Germans-MBP', ip: '2a02:a03f:6823:db00:834:edd1:d2d6:7bd8%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.iqVX5r}, goog:chromeOptions: {debuggerAddress: localhost:45195}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 12fbf37a2bb369efeda9acc8de9...}
+Session ID: 12fbf37a2bb369efeda9acc8de9f2ba7
+*** Element info: {Using=xpath, value=//li/a[@href = '/basic_auth']}
+	at tests.BasicAuthTest.openPage(BasicAuthTest.java:19)
+
