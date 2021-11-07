@@ -34,18 +34,47 @@ public abstract class BaseTest {
 
 	@BeforeSuite
 	public void setUp() {
-		getDriver(DriverType.CHROME, "local");
+		DriverType driverType = null;
+
+		switch (getBrowserProperty()) {
+		case "firefox":
+			driverType = DriverType.CHROME;
+			break;
+		case "edge":
+			driverType = DriverType.EDGE;
+			break;
+		default:
+			driverType = DriverType.CHROME;
+		};
+
+		getDriver(driverType, getEnvironmentProperty());
 	}
 
 	@AfterTest(description = "Quit WebDriver")
 	public void tearDown() {
 		driverManager.quitWebDriver();
 	}
-	
+
 	@AfterMethod
 	public void takeScreenshotOnFailure(ITestResult testResult) throws IOException {
-		if(testResult.getStatus() == ITestResult.FAILURE)
+		if (testResult.getStatus() == ITestResult.FAILURE)
 			driverManager.takeScreenShot(testResult.getName());
+	}
+
+	private String getBrowserProperty() {
+		String browserName = System.getProperty("browser");
+		if (browserName == null)
+			browserName = "chrome";
+		return browserName;
+	}
+
+	private String getEnvironmentProperty() {
+		String environment = System.getProperty("env");
+		if (environment == null || environment.equalsIgnoreCase("local"))
+			environment = "local";
+		else
+			environment = "remote";
+		return environment;
 	}
 
 }
