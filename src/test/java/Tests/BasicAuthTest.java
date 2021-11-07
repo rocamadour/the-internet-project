@@ -1,7 +1,7 @@
 package tests;
 
 import org.apache.logging.log4j.*;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pages.BasicAuthPage;
@@ -14,7 +14,7 @@ public class BasicAuthTest extends BaseTest {
 	private static Logger logger = LogManager.getLogger(BasicAuthTest.class.getName());
 	private BasicAuthPage basicAuth;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void openPage() throws AutomationException {
 		basicAuth = (BasicAuthPage) new TheInternetPage(driver).openPage(InternetLinks.BASICAUTH);
 	}

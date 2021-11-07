@@ -46,9 +46,11 @@ public abstract class DriverManager {
 	}
 
 	public void takeScreenShot(String fileName) throws IOException {
+		logger.info("Take screenshot of failed test");
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src,
-				new File("//Users//germanmuller//eclipse-workspace////tempFiles//screenshots//" + fileName + ".png"));
+		String path = System.getProperty("user.dir") + "//tempFiles//screenshots//" + fileName + ".png";
+		FileUtils.copyFile(src,	new File(path));
+		logger.info("The file is located in: {}", path);
 	}
 
 }

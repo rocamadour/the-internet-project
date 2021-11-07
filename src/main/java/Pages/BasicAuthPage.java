@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class BasicAuthPage extends TheInternetPage {
+public class BasicAuthPage extends TestPage {
 
 	private static Logger logger = LogManager.getLogger(BasicAuthPage.class.getName());
 	

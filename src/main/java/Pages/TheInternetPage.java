@@ -17,7 +17,7 @@ public class TheInternetPage extends TestPage {
 	public TheInternetPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
-		if (!driver.getCurrentUrl().contains(URL))
+		if (!driver.getCurrentUrl().endsWith(".com/"))
 			driver.get(URL);
 	}
 	

@@ -35,7 +35,6 @@ public abstract class BaseTest {
 	@BeforeSuite
 	public void setUp() {
 		DriverType driverType = null;
-
 		switch (getBrowserProperty()) {
 		case "firefox":
 			driverType = DriverType.CHROME;
@@ -69,10 +68,10 @@ public abstract class BaseTest {
 	}
 
 	private String getEnvironmentProperty() {
-		String environment = System.getProperty("env");
-		if (environment == null)
-			environment = "local";
-		return environment;
+		String env = System.getProperty("env");
+		if (env == null)
+			env = "local";
+		return env;
 	}
 
 }

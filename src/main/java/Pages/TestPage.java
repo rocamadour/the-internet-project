@@ -1,7 +1,6 @@
 package pages;
 
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
@@ -31,13 +30,13 @@ public class TestPage {
 	}
 
 	public boolean isElementPresent(By locatorKey) {
-		logger.log(Level.INFO, "Validate the element is present or not");
+		logger.info("Validate the element is present or not");
 		try {
 			getElement(locatorKey);
-			logger.log(Level.INFO, "Element present");
+			logger.info("Element present");
 			return true;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			logger.log(Level.INFO, "Element NOT present");
+			logger.info("Element NOT present");
 			return false;
 		}
 	}
@@ -51,7 +50,7 @@ public class TestPage {
 	public void selectDropdownValue(By dropdownSelector, String value) {
 		Select dropdown = new Select(getElement(dropdownSelector));
 		dropdown.selectByValue(value);
-		logger.log(Level.INFO, "Selected value is: {0}", dropdown.getFirstSelectedOption().getText());
+		logger.info("Selected value is: " + dropdown.getFirstSelectedOption().getText());
 	}
 
 	public void openContextMenu(By target) {

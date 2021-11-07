@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class ContextMenuPage extends TheInternetPage {
+public class ContextMenuPage extends TestPage {
 
 	private Logger logger = LogManager.getLogger(ContextMenuPage.class.getName());
 	private By rectangle = By.xpath("//div[@id='hot-spot']");

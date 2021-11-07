@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class DropdownPage extends TheInternetPage {
+public class DropdownPage extends TestPage {
 
 	private Logger logger = LogManager.getLogger(DropdownPage.class.getName());
 	private By dropdown = By.xpath("//select[@id='dropdown']");

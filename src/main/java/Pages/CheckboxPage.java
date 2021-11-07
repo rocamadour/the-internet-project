@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class CheckboxPage extends TheInternetPage {
+public class CheckboxPage extends TestPage {
 
 	private Logger logger = LogManager.getLogger(CheckboxPage.class.getName());
 

@@ -10,7 +10,7 @@ import org.testng.Assert;
 
 import seleniumCore.AutomationException;
 
-public class AddElementsPage extends TheInternetPage {
+public class AddElementsPage extends TestPage {
 
 	private static Logger logger = LogManager.getLogger(AddElementsPage.class.getName());
 
